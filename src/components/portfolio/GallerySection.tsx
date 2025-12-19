@@ -97,26 +97,6 @@ const GallerySection = () => {
             ))}
           </div>
 
-          <div className="mt-8 p-6 bg-secondary/10 rounded-xl border border-secondary/20">
-            <h4 className="font-semibold text-foreground mb-2">Video Submission Instructions</h4>
-            <p className="text-muted-foreground text-sm">
-              Upload simulation videos demonstrating RPL assessment activities including:
-            </p>
-            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></span>
-                <span><strong>Publicity and Awareness:</strong> Demonstrating how to inform candidates about RPL</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></span>
-                <span><strong>Counselling and Facilitation:</strong> Proper candidate reception and guidance</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></span>
-                <span><strong>Summative Assessment:</strong> Conducting a complete RPL assessment process</span>
-              </li>
-            </ul>
-          </div>
         </div>
 
         {/* Lightbox */}
