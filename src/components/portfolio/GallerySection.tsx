@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Camera, Video, Play, X, Image as ImageIcon } from "lucide-react";
+import { Camera, Video, X, Image as ImageIcon } from "lucide-react";
 
 const photos = [
   { id: 1, title: "Ministry Work", description: "Pastoral activities and church services" },
@@ -11,9 +11,8 @@ const photos = [
 ];
 
 const videos = [
-  { id: 1, title: "Publicity & Awareness", description: "RPL awareness simulation video" },
-  { id: 2, title: "Counselling & Facilitation", description: "RPL counselling process demonstration" },
-  { id: 3, title: "Summative Assessment", description: "RPL assessment simulation" },
+  { id: 1, title: "RPL Simulation Video 1", driveId: "1E-OJGA5HV7eAaVtS-vzxHVwH-Gk2qY8C" },
+  { id: 2, title: "RPL Simulation Video 2", driveId: "1gPOYrooxDrRuM2vV7hPdus-4pBOSP2cU" },
 ];
 
 const GallerySection = () => {
@@ -80,23 +79,20 @@ const GallerySection = () => {
             <span className="badge-gold text-xs">Task 2 - RPL Simulations</span>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {videos.map((video) => (
-              <div
-                key={video.id}
-                className="card-elevated group cursor-pointer"
-                onClick={() => setLightbox({ type: "video", id: video.id })}
-              >
-                <div className="aspect-video bg-muted rounded-lg mb-4 flex items-center justify-center relative overflow-hidden">
-                  <Video className="text-muted-foreground" size={48} />
-                  <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-primary-foreground/20 flex items-center justify-center">
-                      <Play className="text-primary-foreground ml-1" size={32} />
-                    </div>
-                  </div>
+              <div key={video.id} className="card-elevated">
+                <div className="aspect-video rounded-lg overflow-hidden">
+                  <iframe
+                    src={`https://drive.google.com/file/d/${video.driveId}/preview`}
+                    width="100%"
+                    height="100%"
+                    allow="autoplay"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
                 </div>
-                <h4 className="font-semibold text-foreground mb-1">{video.title}</h4>
-                <p className="text-sm text-muted-foreground">{video.description}</p>
+                <h4 className="font-semibold text-foreground mt-4">{video.title}</h4>
               </div>
             ))}
           </div>
