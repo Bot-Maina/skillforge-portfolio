@@ -1,13 +1,17 @@
 import { useState } from "react";
-import { Camera, Video, X, Image as ImageIcon } from "lucide-react";
+import { Camera, Video, X } from "lucide-react";
 
 const photos = [
-  { id: 1, title: "Ministry Work", description: "Pastoral activities and church services" },
-  { id: 2, title: "Training Sessions", description: "Leadership and teaching workshops" },
-  { id: 3, title: "Community Outreach", description: "Charitable programs and community engagement" },
-  { id: 4, title: "Counselling Ministry", description: "Pastoral care and guidance sessions" },
-  { id: 5, title: "Worship Leadership", description: "Leading congregation in worship" },
-  { id: 6, title: "Mentorship", description: "Training emerging church leaders" },
+  { id: 1, src: "/cert1.jpeg" },
+  { id: 2, src: "/cert2.jpeg" },
+  { id: 3, src: "/cert3.jpeg" },
+  { id: 4, src: "/cert4.jpeg" },
+  { id: 5, src: "/cert5.jpeg" },
+  { id: 6, src: "/cert6.jpeg" },
+  { id: 7, src: "/cert7.jpeg" },
+  { id: 8, src: "/cert8.jpeg" },
+  { id: 9, src: "/cert9.jpeg" },
+  { id: 10, src: "/cert10.jpeg" },
 ];
 
 const videos = [
@@ -16,7 +20,7 @@ const videos = [
 ];
 
 const GallerySection = () => {
-  const [lightbox, setLightbox] = useState<{ type: string; id: number } | null>(null);
+  const [lightbox, setLightbox] = useState<{ src: string } | null>(null);
 
   return (
     <section id="gallery" className="py-20 bg-muted/30">
@@ -40,28 +44,18 @@ const GallerySection = () => {
             </h3>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {photos.map((photo) => (
               <button
                 key={photo.id}
-                onClick={() => setLightbox({ type: "photo", id: photo.id })}
-                className="gallery-item group relative aspect-[4/3] bg-muted"
+                onClick={() => setLightbox({ src: photo.src })}
+                className="gallery-item group relative aspect-[4/3] overflow-hidden rounded-lg"
               >
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-                  <ImageIcon className="text-muted-foreground mb-2" size={40} />
-                  <p className="text-sm text-muted-foreground">
-                    {photo.title}
-                  </p>
-                  <p className="text-xs text-muted-foreground/70 mt-1">
-                    (Upload photo {photo.id})
-                  </p>
-                </div>
-                <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <div className="text-primary-foreground text-center p-4">
-                    <p className="font-semibold">{photo.title}</p>
-                    <p className="text-sm opacity-80">{photo.description}</p>
-                  </div>
-                </div>
+                <img
+                  src={photo.src}
+                  alt={`Certificate ${photo.id}`}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
               </button>
             ))}
           </div>
@@ -111,22 +105,12 @@ const GallerySection = () => {
             >
               <X size={32} />
             </button>
-            <div className="max-w-4xl w-full bg-card rounded-xl p-4" onClick={(e) => e.stopPropagation()}>
-              <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                {lightbox.type === "photo" ? (
-                  <div className="text-center">
-                    <ImageIcon className="mx-auto mb-3 text-muted-foreground" size={64} />
-                    <p className="text-muted-foreground">Photo placeholder</p>
-                    <p className="text-sm text-muted-foreground/70">Upload your photo to view</p>
-                  </div>
-                ) : (
-                  <div className="text-center">
-                    <Video className="mx-auto mb-3 text-muted-foreground" size={64} />
-                    <p className="text-muted-foreground">Video placeholder</p>
-                    <p className="text-sm text-muted-foreground/70">Upload your video to view</p>
-                  </div>
-                )}
-              </div>
+            <div className="max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
+              <img
+                src={lightbox.src}
+                alt="Certificate"
+                className="w-full h-auto rounded-xl"
+              />
             </div>
           </div>
         )}
