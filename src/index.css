@@ -1,96 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 40 33% 98%;
+    --foreground: 220 30% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 30% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 30% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 220 56% 23%;
+    --primary-foreground: 40 33% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 43 74% 49%;
+    --secondary-foreground: 220 30% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 40 20% 94%;
+    --muted-foreground: 220 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 43 74% 49%;
+    --accent-foreground: 220 30% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 33% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 220 56% 23%;
 
-    --radius: 0.5rem;
+    --radius: 0.625rem;
+
+    /* Custom tokens */
+    --gold: 43 74% 49%;
+    --gold-light: 43 74% 70%;
+    --navy: 220 56% 23%;
+    --navy-dark: 220 56% 15%;
+    --cream: 40 33% 98%;
+    --cream-dark: 40 20% 94%;
+
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Source Sans 3', sans-serif;
+
+    --shadow-card: 0 4px 20px -4px hsl(220 56% 23% / 0.08);
+    --shadow-elevated: 0 8px 30px -8px hsl(220 56% 23% / 0.12);
+    --shadow-gold: 0 4px 20px -4px hsl(43 74% 49% / 0.3);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 220 30% 10%;
+    --foreground: 40 33% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 30% 14%;
+    --card-foreground: 40 33% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 30% 14%;
+    --popover-foreground: 40 33% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 43 74% 55%;
+    --primary-foreground: 220 30% 10%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 30% 20%;
+    --secondary-foreground: 40 33% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 30% 18%;
+    --muted-foreground: 220 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 43 74% 55%;
+    --accent-foreground: 220 30% 10%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 40 33% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 220 30% 22%;
+    --input: 220 30% 22%;
+    --ring: 43 74% 55%;
   }
 }
 
@@ -99,7 +97,147 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-center mb-2;
+    font-family: var(--font-heading);
+  }
+
+  .section-subtitle {
+    @apply text-muted-foreground text-center max-w-2xl mx-auto mb-10;
+  }
+
+  .card-elevated {
+    @apply bg-card rounded-xl p-6 md:p-8;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .card-elevated:hover {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .gold-accent {
+    @apply bg-secondary text-secondary-foreground;
+  }
+
+  .nav-link {
+    @apply relative text-foreground/80 hover:text-primary transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .badge-gold {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+    background: hsl(var(--gold) / 0.15);
+    color: hsl(var(--gold));
+  }
+
+  .divider-gold {
+    @apply h-1 w-20 mx-auto rounded-full;
+    background: linear-gradient(90deg, hsl(var(--gold)), hsl(var(--gold-light)));
+  }
+
+  .icon-circle {
+    @apply w-12 h-12 rounded-full flex items-center justify-center;
+    background: hsl(var(--gold) / 0.15);
+    color: hsl(var(--gold));
+  }
+
+  .toc-item {
+    @apply flex items-center gap-4 py-4 px-4 hover:bg-muted/50 rounded-lg transition-colors cursor-pointer;
+  }
+
+  .gallery-item {
+    @apply overflow-hidden rounded-xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  .gallery-item img {
+    @apply w-full h-full object-cover transition-transform duration-500;
+  }
+
+  .gallery-item:hover img {
+    @apply scale-105;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--gold)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231a365d' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
 }
