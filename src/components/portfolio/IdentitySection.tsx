@@ -28,14 +28,12 @@ const IdentitySection = () => {
             </div>
 
             <div className="relative">
-              <div className="aspect-[3/4] max-w-xs mx-auto rounded-xl overflow-hidden shadow-elevated bg-muted flex items-center justify-center">
-                <div className="text-center p-8">
-                  <User className="mx-auto mb-4 text-muted-foreground" size={64} />
-                  <p className="text-muted-foreground text-sm">
-                    Identity Photo<br />
-                    <span className="text-xs">(Upload your photo to public/me.jpeg)</span>
-                  </p>
-                </div>
+              <div className="aspect-[3/4] max-w-xs mx-auto rounded-xl overflow-hidden shadow-elevated">
+                <img
+                  src="/me.jpeg"
+                  alt="Ombere Thomas Opado - Profile Photo"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="absolute -bottom-3 -right-3 w-16 h-16 rounded-full bg-secondary flex items-center justify-center shadow-gold">
                 <Shield className="text-secondary-foreground" size={28} />
@@ -59,14 +57,12 @@ const IdentitySection = () => {
 
             <div className="space-y-4">
               <div className="relative">
-                <div className="aspect-video w-full rounded-xl overflow-hidden shadow-card bg-muted flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <CreditCard className="mx-auto mb-3 text-muted-foreground" size={48} />
-                    <p className="text-muted-foreground text-sm">
-                      ID Card - Front<br />
-                      <span className="text-xs">(Upload to public/id1.jpeg)</span>
-                    </p>
-                  </div>
+                <div className="aspect-video w-full rounded-xl overflow-hidden shadow-card">
+                  <img
+                    src="/id2.jpeg"
+                    alt="National ID Card - Front"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <span className="absolute top-2 left-2 bg-primary text-primary-foreground text-xs px-2 py-1 rounded-full">
                   Front
@@ -74,14 +70,12 @@ const IdentitySection = () => {
               </div>
               
               <div className="relative">
-                <div className="aspect-video w-full rounded-xl overflow-hidden shadow-card bg-muted flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <CreditCard className="mx-auto mb-3 text-muted-foreground" size={48} />
-                    <p className="text-muted-foreground text-sm">
-                      ID Card - Back<br />
-                      <span className="text-xs">(Upload to public/id2.jpeg)</span>
-                    </p>
-                  </div>
+                <div className="aspect-video w-full rounded-xl overflow-hidden shadow-card">
+                  <img
+                    src="/id1.jpeg"
+                    alt="National ID Card - Back"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <span className="absolute top-2 left-2 bg-primary text-primary-foreground text-xs px-2 py-1 rounded-full">
                   Back
